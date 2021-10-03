@@ -1,0 +1,13 @@
+#Enviar un correo
+	
+mail prueba@correo.com
+
+#Una vez que hayamos terminado pulsaremos CTRL+D para finalizar.
+
+#Enviar mensajes  mediante scripts
+
+echo "Contenido del mensaje" | mail prueba@correo.com
+
+echo "Contenido del mensaje" | mail -s "Asunto" prueba@correo.com
+
+echo "Contenido del mensaje" | mail -s "Asunto" -A "fichero.txt" prueba@correo.com

@@ -1,13 +1,18 @@
-#Enviar un correo
-	
+#Enviar un correo	
 mail prueba@correo.com
-
+mail -s "Email a varios usuarios" usuario1@mail.com,usuario2@mail.com,usuario3@mail.com
 #Una vez que hayamos terminado pulsaremos CTRL+D para finalizar.
 
+#Enviar el contenido de un archivo en el mail
+mail -s “Salida del archivo” nonaino@mail.com < /home/sapoclay/texto.txt
+
+#Enviar un correo con la salida de un comando
+cat /home/sapoclay/.config/mimeapps.list | mail -s "Envío del resultado de un comando" nonaino@mail.com
+
 #Enviar mensajes  mediante scripts
-
 echo "Contenido del mensaje" | mail prueba@correo.com
-
 echo "Contenido del mensaje" | mail -s "Asunto" prueba@correo.com
-
 echo "Contenido del mensaje" | mail -s "Asunto" -A "fichero.txt" prueba@correo.com
+
+#Enviar un correo con encabezados adicionales
+mail -s "Correo con encabezados adicionales" -a From:sapoclay\<usuario1@casimailx.com\> nonaino@mail.com
